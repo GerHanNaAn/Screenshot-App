@@ -7,7 +7,7 @@
 ## Версии
 
 - `main` — macOS: Swift / AppKit, сборка из исходников через `./build-mac.sh`.
-- `ubuntu` — Ubuntu: Python / PySide6; запуск через `python3 main.py` после установки зависимостей из инструкции ниже. Это опубликованный рабочий снимок ветки; готовность на конкретном рабочем столе нужно проверить. При первом запуске создаются пользовательский launcher, пункт меню и автозапуск.
+- `ubuntu` — Ubuntu: Python / PySide6; запуск через `python3 main.py` после установки зависимостей из README ветки `ubuntu`. Это опубликованный рабочий снимок ветки; готовность на конкретном рабочем столе нужно проверить. При первом запуске создаются пользовательский launcher, пункт меню и автозапуск.
 
 Готовые установщики в этот репозиторий не включены. Для macOS сборка использует локальную ad hoc подпись. Приложению требуется системное разрешение на захват экрана.
 
@@ -24,7 +24,7 @@
 
 ```bash
 sudo apt install python3-pyside6.qtcore python3-pyside6.qtgui python3-pyside6.qtwidgets python3-pyside6.qtsvg python3-pyside6.qtnetwork python3-dbus-next qt6-wayland gstreamer1.0-tools gstreamer1.0-pipewire gstreamer1.0-plugins-good
-cd JoxiLite
+cd Screenshot-App
 python3 main.py
 ```
 
@@ -57,7 +57,7 @@ python3 main.py
 
 ```bash
 xcode-select --install
-cd JoxiLite
+cd Screenshot-App
 ./build-mac.sh
 open ~/Applications/JoxiLite.app
 ```
