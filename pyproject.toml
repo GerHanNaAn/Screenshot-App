@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "joxilite"
+version = "4.0.0"
+description = "Local screenshot and annotation application"
+requires-python = ">=3.10"
+dependencies = ["PySide6>=6.8", "dbus-next>=0.2.3; sys_platform == 'linux'"]
+
+[project.scripts]
+joxilite = "joxilite.app:main"
+
+[tool.setuptools.packages.find]
+include = ["joxilite*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
