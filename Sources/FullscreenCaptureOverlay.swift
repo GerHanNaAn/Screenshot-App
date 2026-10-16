@@ -322,14 +322,14 @@ final class FullscreenCaptureOverlay: NSObject, NSWindowDelegate {
         tools.spacing = 4
         moveButton = makeButton("Двигать", #selector(selectMove))
         moveButton.setButtonType(.toggle)
-        tools.addArrangedSubview(moveButton)
-        for tool in [DrawingTool.pen, .line, .arrow, .text, .rectangle, .ellipse, .pixelate] {
+        for tool in DrawingTool.allCases where tool != .crop {
             let button = makeButton(toolButtonTitle(tool), #selector(selectTool(_:)))
             button.tag = DrawingTool.allCases.firstIndex(of: tool) ?? 0
             button.setButtonType(.toggle)
             tools.addArrangedSubview(button)
             toolButtons.append(button)
         }
+        tools.addArrangedSubview(moveButton)
         let actions = NSStackView()
         actions.spacing = 6
         undoButton = makeButton("↶  ⌘Z", #selector(undo))
